@@ -8,6 +8,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title> URL Shortener</title>
 
@@ -42,20 +43,26 @@
 		<section class="bg_main" id="shorten" style="padding-bottom: 5%;">
 			<div class="container cutt_main_inp">
 				<div class="row">
-					<div class="col-12 mt-4 py-2 mb-2">
-						<form method="post" id="form_input">
-							{% csrf_token %}
-							<div class="input-group">
-								<input type="url" class="cutt_url w-50 p-4 rounded-12"
-									placeholder="Paste long url and shorten it" name="longurl" required />
-
-								<input type="text" class="cutt_url w-25 p-4 rounded-12" placeholder="alias"
-									name="custom_name" style="margin-left: 5%;" />
-
-								<button class="btn_cutt rounded-6 shortenit_b" role="button">Shorten</button>
-							</div>
-						</form>
-					</div>
+					<div class="container mt-5">
+  						<form method="POST">
+    					{% csrf_token %}
+    
+    					<div class="row g-2">
+      						<div class="col-md-6">
+       						 <input type="text" name="url" class="form-control" placeholder="Paste long url and shorten it">
+      						</div>
+      
+      <div class="col-md-3">
+        <input type="text" name="alias" class="form-control" placeholder="alias">
+      </div>
+      
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-primary w-100">Shorten</button>
+      </div>
+    </div>
+    
+  </form>
+</div>
 				</div>
 
 				<div class="row">
